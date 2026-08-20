@@ -8,8 +8,8 @@ import { MapPin, Star, Clock, Waves, Dumbbell, Car, Share2, Heart, ChevronRight 
 
 const GYM_PHOTOS: Record<string, string[]> = {
  'iron-temple': ['/gym-photos/weights.jpg','/gym-photos/interior.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg'],
- 'fitlife-247': ['/gym-photos/cardio.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/interior.jpg'],
- 'peak-athletics': ['/gym-photos/pool.jpg','/gym-photos/class.jpg','/gym-photos/interior.jpg','/gym-photos/weights.jpg'],
+ 'fitlife-247': ['/gym-photos/fitlife-1.jpg','/gym-photos/fitlife-2.jpg','/gym-photos/fitlife-3.jpg','/gym-photos/fitlife-4.jpg'],
+ 'peak-athletics': ['/gym-photos/peak-1.jpg','/gym-photos/peak-2.jpg','/gym-photos/peak-3.jpg','/gym-photos/peak-4.jpg'],
  'flex-factory': ['/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/weights.jpg','/gym-photos/cardio.jpg'],
  'zen-fitness': ['/gym-photos/pool.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg','/gym-photos/machines.jpg'],
  'muscle-lab': ['/gym-photos/weights.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg'],
