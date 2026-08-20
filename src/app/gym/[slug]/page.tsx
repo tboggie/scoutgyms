@@ -40,9 +40,14 @@ export default function GymProfile() {
  </div>
  </div>
 
- {/* Photo grid placeholder */}
+ {/* Photo grid */}
  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
- {[1,2,3,4].map(i=><div key={i} className="h-40 rounded-xl bg-bg2 border border-border flex items-center justify-center text-xs font-bold text-text3">PHOTO</div>)}
+ {['/gym-photos/weights.jpg','/gym-photos/interior.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg'].map((src,i)=>(
+ <div key={i} className="h-40 rounded-xl overflow-hidden relative group cursor-pointer">
+ <img src={src} alt={`Gym photo ${i+1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+ {i===3 && <div className="absolute inset-0 bg-black/40 flex items-center justify-center"><span className="text-white text-sm font-semibold">+12 photos</span></div>}
+ </div>
+ ))}
  </div>
 
  <div className="grid lg:grid-cols-3 gap-8">

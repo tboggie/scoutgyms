@@ -54,7 +54,7 @@ export default function SearchPage() {
  {MOCK_GYMS.map(gym=>(
  <div key={gym.id} className="bg-card rounded-2xl border border-border p-5 hover:shadow-lg transition-all">
  <div className="flex flex-col md:flex-row md:items-center gap-4">
- <div className="w-full md:w-28 h-20 rounded-xl bg-bg2 border border-border flex items-center justify-center text-xs font-bold text-text3 flex-shrink-0">GYM</div>
+ <img src={['/gym-photos/weights.jpg','/gym-photos/cardio.jpg','/gym-photos/interior.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/pool.jpg'][parseInt(gym.id)-1] || '/gym-photos/weights.jpg'} alt={gym.name} className="w-full md:w-28 h-20 rounded-xl object-cover flex-shrink-0"/>
  <div className="flex-1">
  <div className="flex items-start justify-between">
  <div>
