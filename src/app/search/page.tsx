@@ -54,7 +54,7 @@ export default function SearchPage() {
  {MOCK_GYMS.map(gym=>(
  <div key={gym.id} className="bg-card rounded-2xl border border-border p-5 hover:shadow-lg transition-all">
  <div className="flex flex-col md:flex-row md:items-center gap-4">
- <img src={['/gym-photos/weights.jpg','/gym-photos/cardio.jpg','/gym-photos/interior.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/pool.jpg'][parseInt(gym.id)-1] || '/gym-photos/weights.jpg'} alt={gym.name} className="w-full md:w-28 h-20 rounded-xl object-cover flex-shrink-0"/>
+ <img src={['/gym-photos/weights.jpg','/gym-photos/fitlife-1.jpg','/gym-photos/peak-1.jpg','/gym-photos/training.jpg','/gym-photos/pool.jpg','/gym-photos/machines.jpg','/gym-photos/gym-7.jpg','/gym-photos/gym-8.jpg','/gym-photos/gym-9.jpg','/gym-photos/gym-10.jpg','/gym-photos/gym-11.jpg','/gym-photos/gym-12.jpg','/gym-photos/gym-13.jpg','/gym-photos/gym-14.jpg','/gym-photos/cardio.jpg','/gym-photos/interior.jpg','/gym-photos/boxing.jpg','/gym-photos/class.jpg','/gym-photos/weights.jpg','/gym-photos/pool.jpg'][parseInt(gym.id)-1] || '/gym-photos/weights.jpg'} alt={gym.name} className="w-full md:w-28 h-20 rounded-xl object-cover flex-shrink-0"/>
  <div className="flex-1">
  <div className="flex items-start justify-between">
  <div>

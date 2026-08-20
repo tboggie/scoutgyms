@@ -13,6 +13,20 @@ const GYM_PHOTOS: Record<string, string[]> = {
  'flex-factory': ['/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/weights.jpg','/gym-photos/cardio.jpg'],
  'zen-fitness': ['/gym-photos/pool.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg','/gym-photos/machines.jpg'],
  'muscle-lab': ['/gym-photos/weights.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg'],
+ 'empire-fitness': ['/gym-photos/gym-7.jpg','/gym-photos/boxing.jpg','/gym-photos/class.jpg','/gym-photos/cardio.jpg'],
+ 'liberty-gym': ['/gym-photos/gym-8.jpg','/gym-photos/machines.jpg','/gym-photos/cardio.jpg','/gym-photos/interior.jpg'],
+ 'southside-strength': ['/gym-photos/gym-9.jpg','/gym-photos/weights.jpg','/gym-photos/training.jpg','/gym-photos/machines.jpg'],
+ 'lakefront-athletic-club': ['/gym-photos/pool.jpg','/gym-photos/gym-10.jpg','/gym-photos/class.jpg','/gym-photos/interior.jpg'],
+ 'lone-star-fitness': ['/gym-photos/gym-11.jpg','/gym-photos/cardio.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg'],
+ 'bayou-city-barbell': ['/gym-photos/gym-12.jpg','/gym-photos/weights.jpg','/gym-photos/training.jpg','/gym-photos/machines.jpg'],
+ 'pacific-fitness': ['/gym-photos/pool.jpg','/gym-photos/gym-13.jpg','/gym-photos/class.jpg','/gym-photos/interior.jpg'],
+ 'mission-crossfit': ['/gym-photos/gym-14.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/cardio.jpg'],
+ 'desert-iron': ['/gym-photos/gym-7.jpg','/gym-photos/cardio.jpg','/gym-photos/weights.jpg','/gym-photos/machines.jpg'],
+ 'summit-gym': ['/gym-photos/gym-9.jpg','/gym-photos/training.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg'],
+ 'peachtree-fitness': ['/gym-photos/gym-11.jpg','/gym-photos/machines.jpg','/gym-photos/cardio.jpg','/gym-photos/training.jpg'],
+ 'emerald-city-athletics': ['/gym-photos/pool.jpg','/gym-photos/gym-10.jpg','/gym-photos/class.jpg','/gym-photos/weights.jpg'],
+ 'south-beach-gym': ['/gym-photos/gym-8.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/cardio.jpg'],
+ 'capitol-strength': ['/gym-photos/pool.jpg','/gym-photos/gym-13.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg'],
 };
 
 export default function GymProfile() {
