@@ -6,34 +6,18 @@ import { useParams } from 'next/navigation';
 import { MOCK_GYMS, MOCK_REVIEWS } from '@/lib/mock-data';
 import { MapPin, Star, Clock, Waves, Dumbbell, Car, Share2, Heart, ChevronRight } from 'lucide-react';
 
-const GYM_PHOTOS: Record<string, string[]> = {
- 'iron-temple': ['/gym-photos/weights.jpg','/gym-photos/interior.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg'],
- 'fitlife-247': ['/gym-photos/fitlife-1.jpg','/gym-photos/fitlife-2.jpg','/gym-photos/fitlife-3.jpg','/gym-photos/fitlife-4.jpg'],
- 'peak-athletics': ['/gym-photos/peak-1.jpg','/gym-photos/peak-2.jpg','/gym-photos/peak-3.jpg','/gym-photos/peak-4.jpg'],
- 'flex-factory': ['/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/weights.jpg','/gym-photos/cardio.jpg'],
- 'zen-fitness': ['/gym-photos/pool.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg','/gym-photos/machines.jpg'],
- 'muscle-lab': ['/gym-photos/weights.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg'],
- 'empire-fitness': ['/gym-photos/gym-7.jpg','/gym-photos/boxing.jpg','/gym-photos/class.jpg','/gym-photos/cardio.jpg'],
- 'liberty-gym': ['/gym-photos/gym-8.jpg','/gym-photos/machines.jpg','/gym-photos/cardio.jpg','/gym-photos/interior.jpg'],
- 'southside-strength': ['/gym-photos/gym-9.jpg','/gym-photos/weights.jpg','/gym-photos/training.jpg','/gym-photos/machines.jpg'],
- 'lakefront-athletic-club': ['/gym-photos/pool.jpg','/gym-photos/gym-10.jpg','/gym-photos/class.jpg','/gym-photos/interior.jpg'],
- 'lone-star-fitness': ['/gym-photos/gym-11.jpg','/gym-photos/cardio.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg'],
- 'bayou-city-barbell': ['/gym-photos/gym-12.jpg','/gym-photos/weights.jpg','/gym-photos/training.jpg','/gym-photos/machines.jpg'],
- 'pacific-fitness': ['/gym-photos/pool.jpg','/gym-photos/gym-13.jpg','/gym-photos/class.jpg','/gym-photos/interior.jpg'],
- 'mission-crossfit': ['/gym-photos/gym-14.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/cardio.jpg'],
- 'desert-iron': ['/gym-photos/gym-7.jpg','/gym-photos/cardio.jpg','/gym-photos/weights.jpg','/gym-photos/machines.jpg'],
- 'summit-gym': ['/gym-photos/gym-9.jpg','/gym-photos/training.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg'],
- 'peachtree-fitness': ['/gym-photos/gym-11.jpg','/gym-photos/machines.jpg','/gym-photos/cardio.jpg','/gym-photos/training.jpg'],
- 'emerald-city-athletics': ['/gym-photos/pool.jpg','/gym-photos/gym-10.jpg','/gym-photos/class.jpg','/gym-photos/weights.jpg'],
- 'south-beach-gym': ['/gym-photos/gym-8.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/cardio.jpg'],
- 'capitol-strength': ['/gym-photos/pool.jpg','/gym-photos/gym-13.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg'],
-};
+const allPhotos = ['/gym-photos/weights.jpg','/gym-photos/cardio.jpg','/gym-photos/interior.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/pool.jpg','/gym-photos/boxing.jpg','/gym-photos/class.jpg','/gym-photos/fitlife-1.jpg','/gym-photos/fitlife-2.jpg','/gym-photos/peak-1.jpg','/gym-photos/peak-2.jpg','/gym-photos/peak-3.jpg','/gym-photos/peak-4.jpg','/gym-photos/gym-7.jpg','/gym-photos/gym-8.jpg','/gym-photos/gym-9.jpg','/gym-photos/gym-10.jpg','/gym-photos/gym-11.jpg','/gym-photos/gym-12.jpg'];
+
+function getGymPhotos(gymId: number): string[] {
+  const offset = (gymId * 7) % allPhotos.length;
+  return [0,1,2,3].map(i => allPhotos[(offset + i * 3) % allPhotos.length]);
+}
 
 export default function GymProfile() {
  const params = useParams();
  const slug = params.slug as string;
  const gym = MOCK_GYMS.find(g => g.slug === slug) || MOCK_GYMS[0];
- const photos = GYM_PHOTOS[slug] || GYM_PHOTOS['iron-temple'];
+ const photos = getGymPhotos(parseInt(gym.id));
 
  return (<>
  <Navbar />
