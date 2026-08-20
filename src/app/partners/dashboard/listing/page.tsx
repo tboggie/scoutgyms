@@ -1,0 +1,15 @@
+import DashboardShell from '@/components/layout/DashboardShell';
+
+export default function ListingPage() {
+  return (
+    <DashboardShell variant="partners">
+      <h1 className="font-[var(--font-display)] text-2xl font-bold tracking-tight mb-6">Edit listing</h1>
+      <div className="space-y-6 max-w-2xl">
+        <div className="bg-card rounded-xl border border-border p-6 space-y-4"><h2 className="font-semibold">Basic info</h2><div className="grid grid-cols-2 gap-3"><div><label className="text-sm font-medium text-text2 block mb-1.5">Gym name</label><input defaultValue="Iron Temple" className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text"/></div><div><label className="text-sm font-medium text-text2 block mb-1.5">Phone</label><input defaultValue="(310) 555-0123" className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text"/></div></div><div><label className="text-sm font-medium text-text2 block mb-1.5">Address</label><input defaultValue="123 Main St, Beverly Hills, CA 90210" className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text"/></div><div><label className="text-sm font-medium text-text2 block mb-1.5">Description</label><textarea rows={3} defaultValue="Premium 24/7 gym with extensive free weights, machines and cardio equipment." className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text resize-none"/></div></div>
+        <div className="bg-card rounded-xl border border-border p-6 space-y-4"><h2 className="font-semibold">Pricing</h2><div className="grid grid-cols-3 gap-3"><div><label className="text-sm font-medium text-text2 block mb-1.5">Monthly</label><input defaultValue="$39" className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text"/></div><div><label className="text-sm font-medium text-text2 block mb-1.5">Join fee</label><input defaultValue="$0" className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text"/></div><div><label className="text-sm font-medium text-text2 block mb-1.5">Contract</label><select className="w-full px-4 py-2.5 rounded-xl border border-border bg-bg text-sm text-text2"><option>None</option><option>6 months</option><option>12 months</option></select></div></div></div>
+        <div className="bg-card rounded-xl border border-border p-6"><h2 className="font-semibold mb-4">Photos</h2><div className="grid grid-cols-4 gap-3">{[1,2,3].map(i=>(<div key={i} className="aspect-square rounded-xl bg-bg2 border border-border flex items-center justify-center text-2xl">🏋️</div>))}<div className="aspect-square rounded-xl border-2 border-dashed border-border flex items-center justify-center text-2xl text-text3 hover:border-teal cursor-pointer">+</div></div></div>
+        <button className="bg-teal text-white px-6 py-3 rounded-xl font-semibold text-[15px] hover:bg-teal-dark transition-colors">Save listing</button>
+      </div>
+    </DashboardShell>
+  );
+}

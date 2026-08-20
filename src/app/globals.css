@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap');
+
+@theme inline {
+  --color-bg: #f5f5f4;
+  --color-bg2: #fafaf9;
+  --color-card: #ffffff;
+  --color-teal: #0B7D8E;
+  --color-teal-dark: #065a66;
+  --color-teal-light: #e0f4f4;
+  --color-green: #059669;
+  --color-green-light: #ecfdf5;
+  --color-amber: #d97706;
+  --color-amber-light: #fffbeb;
+  --color-purple: #7c3aed;
+  --color-purple-light: #f5f3ff;
+  --color-red: #dc2626;
+  --color-red-light: #fef2f2;
+  --color-blue: #2563eb;
+  --color-blue-light: #eff6ff;
+  --color-coral: #ea580c;
+  --color-coral-light: #fff7ed;
+  --color-text: #1c1917;
+  --color-text2: #57534e;
+  --color-text3: #78716c;
+  --color-border: #e7e5e4;
+  --color-border2: #d6d3d1;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Syne', 'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+/* Dark mode */
+.dark {
+  --color-bg: #0f1117;
+  --color-bg2: #161822;
+  --color-card: #1c1e2a;
+  --color-teal: #14b8a6;
+  --color-teal-dark: #99f6e4;
+  --color-teal-light: rgba(20,184,166,.12);
+  --color-green: #34d399;
+  --color-green-light: rgba(52,211,153,.12);
+  --color-amber: #fbbf24;
+  --color-amber-light: rgba(251,191,36,.12);
+  --color-purple: #a78bfa;
+  --color-purple-light: rgba(167,139,250,.12);
+  --color-red: #f87171;
+  --color-red-light: rgba(248,113,113,.12);
+  --color-blue: #60a5fa;
+  --color-blue-light: rgba(96,165,250,.12);
+  --color-coral: #fb923c;
+  --color-coral-light: rgba(251,146,60,.12);
+  --color-text: #f0f0ec;
+  --color-text2: #a1a1aa;
+  --color-text3: #71717a;
+  --color-border: #2a2d3a;
+  --color-border2: #3a3d4a;
+  --color-card: #1c1e2a;
+}
