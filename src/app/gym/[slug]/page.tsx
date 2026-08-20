@@ -2,11 +2,24 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { MOCK_GYMS, MOCK_REVIEWS } from '@/lib/mock-data';
 import { MapPin, Star, Clock, Waves, Dumbbell, Car, Share2, Heart, ChevronRight } from 'lucide-react';
 
+const GYM_PHOTOS: Record<string, string[]> = {
+ 'iron-temple': ['/gym-photos/weights.jpg','/gym-photos/interior.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg'],
+ 'fitlife-247': ['/gym-photos/cardio.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/interior.jpg'],
+ 'peak-athletics': ['/gym-photos/pool.jpg','/gym-photos/class.jpg','/gym-photos/interior.jpg','/gym-photos/weights.jpg'],
+ 'flex-factory': ['/gym-photos/training.jpg','/gym-photos/boxing.jpg','/gym-photos/weights.jpg','/gym-photos/cardio.jpg'],
+ 'zen-fitness': ['/gym-photos/pool.jpg','/gym-photos/interior.jpg','/gym-photos/class.jpg','/gym-photos/machines.jpg'],
+ 'muscle-lab': ['/gym-photos/weights.jpg','/gym-photos/machines.jpg','/gym-photos/training.jpg','/gym-photos/boxing.jpg'],
+};
+
 export default function GymProfile() {
- const gym = MOCK_GYMS[0]; // Mock: would use params.slug
+ const params = useParams();
+ const slug = params.slug as string;
+ const gym = MOCK_GYMS.find(g => g.slug === slug) || MOCK_GYMS[0];
+ const photos = GYM_PHOTOS[slug] || GYM_PHOTOS['iron-temple'];
 
  return (<>
  <Navbar />
@@ -42,7 +55,7 @@ export default function GymProfile() {
 
  {/* Photo grid */}
  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
- {['/gym-photos/weights.jpg','/gym-photos/interior.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg'].map((src,i)=>(
+ {photos.map((src,i)=>(
  <div key={i} className="h-40 rounded-xl overflow-hidden relative group cursor-pointer">
  <img src={src} alt={`Gym photo ${i+1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
  {i===3 && <div className="absolute inset-0 bg-black/40 flex items-center justify-center"><span className="text-white text-sm font-semibold">+12 photos</span></div>}
