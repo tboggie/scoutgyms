@@ -34,12 +34,12 @@ body { background: var(--color-bg); color: var(--color-text); font-family: var(-
 
 /* Dark mode */
 .dark {
-  --color-bg: #1e1e24;
-  --color-bg2: #26262e;
-  --color-card: #2c2c35;
+  --color-bg: #4a4a52;
+  --color-bg2: #525260;
+  --color-card: #5a5a64;
   --color-teal: #14b8a6;
   --color-teal-dark: #99f6e4;
-  --color-teal-light: rgba(20,184,166,.12);
+  --color-teal-light: rgba(20,184,166,.15);
   --color-green: #34d399;
   --color-green-light: rgba(52,211,153,.12);
   --color-amber: #fbbf24;
@@ -55,7 +55,7 @@ body { background: var(--color-bg); color: var(--color-text); font-family: var(-
   --color-text: #f0f0ec;
   --color-text2: #a1a1aa;
   --color-text3: #71717a;
-  --color-border: #3a3a44;
-  --color-border2: #484852;
+  --color-border: #62626c;
+  --color-border2: #6e6e78;
   --color-card: #1c1e2a;
 }
