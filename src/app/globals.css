@@ -34,9 +34,9 @@ body { background: var(--color-bg); color: var(--color-text); font-family: var(-
 
 /* Dark mode */
 .dark {
-  --color-bg: #4a4a52;
-  --color-bg2: #525260;
-  --color-card: #5a5a64;
+  --color-bg: #38383f;
+  --color-bg2: #404048;
+  --color-card: #484851;
   --color-teal: #14b8a6;
   --color-teal-dark: #99f6e4;
   --color-teal-light: rgba(20,184,166,.15);
@@ -55,7 +55,7 @@ body { background: var(--color-bg); color: var(--color-text); font-family: var(-
   --color-text: #f0f0ec;
   --color-text2: #a1a1aa;
   --color-text3: #71717a;
-  --color-border: #62626c;
-  --color-border2: #6e6e78;
+  --color-border: #52525a;
+  --color-border2: #5c5c64;
   --color-card: #1c1e2a;
 }
