@@ -99,6 +99,7 @@ export default function SearchPage() {
                     <span className="text-xs px-2 py-0.5 rounded-full bg-bg border border-border text-text3">{gym.contractLength}</span>
                   </div>
                   <div className="flex items-center gap-2 mt-3">
+                    <Link href={`/gym/${gym.slug}/book`} className="px-4 py-1.5 rounded-lg text-xs font-semibold bg-teal text-white hover:bg-teal-dark transition-colors">Book now</Link>
                     <button onClick={()=>toggleCompare(gym.id)} className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${compareList.includes(gym.id)?'bg-teal text-white border-teal':'border-border text-text2 hover:border-teal'}`}>
                       {compareList.includes(gym.id)?'Comparing':'+ Compare'}
                     </button>

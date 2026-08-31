@@ -135,8 +135,9 @@ export default function GymProfile() {
  <div className="bg-card rounded-2xl border border-border p-6 sticky top-24">
  <div className="text-3xl font-bold text-teal font-[var(--font-display)] mb-1">${gym.monthlyPrice}<span className="text-sm text-text3 font-normal">/mo</span></div>
  {gym.joinFee > 0 ? <p className="text-sm text-text3 mb-4">+${gym.joinFee} joining fee</p> : <p className="text-sm text-green font-medium mb-4">No joining fee</p>}
- <Link href={`/gym/${gym.slug}/trial`} className="block w-full text-center bg-teal text-white py-3 rounded-xl font-semibold text-[15px] hover:bg-teal-dark transition-colors mb-3">Book free trial</Link>
- <button className="block w-full text-center border border-teal text-teal py-3 rounded-xl font-semibold text-[15px] hover:bg-teal-light transition-colors">Share & earn $15</button>
+ <Link href={`/gym/${gym.slug}/book`} className="block w-full text-center bg-teal text-white py-3.5 rounded-xl font-semibold text-[15px] hover:bg-teal-dark transition-colors mb-3">Book membership</Link>
+ <Link href={`/gym/${gym.slug}/trial`} className="block w-full text-center border border-teal text-teal py-3 rounded-xl font-semibold text-[15px] hover:bg-teal-light transition-colors mb-3">Try for free first</Link>
+ <button className="block w-full text-center border border-border text-text2 py-3 rounded-xl font-semibold text-[15px] hover:border-teal transition-colors">Share & earn $15</button>
  <div className="mt-4 p-3 rounded-lg bg-green-light text-center"><p className="text-xs font-semibold text-green">Earn $15 for every friend you refer to this gym</p></div>
  </div>
  </div>
