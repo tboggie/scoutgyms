@@ -14,7 +14,7 @@ export default function BookPage() {
   const [step, setStep] = useState(1);
 
   const monthlyPrice = gym.monthlyPrice;
-  const annualPrice = Math.round(gym.monthlyPrice * 0.85);
+  const annualPrice = 70;
   const selectedPrice = plan === 'annual' ? annualPrice : monthlyPrice;
 
   return (<>
