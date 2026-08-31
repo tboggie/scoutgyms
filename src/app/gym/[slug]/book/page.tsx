@@ -14,8 +14,9 @@ export default function BookPage() {
   const [step, setStep] = useState(1);
 
   const monthlyPrice = gym.monthlyPrice;
-  const annualPrice = 70;
-  const selectedPrice = plan === 'annual' ? annualPrice : monthlyPrice;
+  const annualTotal = 70;
+  const selectedPrice = plan === 'annual' ? annualTotal : monthlyPrice;
+  const showJoinFee = plan === 'monthly' ? gym.joinFee : 0;
 
   return (<>
     <Navbar />
@@ -63,22 +64,21 @@ export default function BookPage() {
                 </button>
 
                 <button onClick={() => setPlan('annual')} className={`w-full text-left p-5 rounded-xl border-2 transition-all relative ${plan === 'annual' ? 'border-teal bg-teal-light' : 'border-border hover:border-teal/50'}`}>
-                  <div className="absolute -top-2.5 right-4 bg-green text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">Save 15%</div>
+                  <div className="absolute -top-2.5 right-4 bg-green text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">Best value</div>
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-semibold text-base">Annual</p>
-                      <p className="text-sm text-text2 mt-0.5">Best value — billed yearly</p>
+                      <p className="text-sm text-text2 mt-0.5">One payment for the whole year — no extra fees</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-[var(--font-display)] text-2xl font-bold text-teal">${annualPrice}<span className="text-sm text-text3 font-normal">/mo</span></p>
-                      <p className="text-xs text-text3 line-through">${monthlyPrice}/mo</p>
+                      <p className="font-[var(--font-display)] text-2xl font-bold text-teal">$70<span className="text-sm text-text3 font-normal">/year</span></p>
                     </div>
                   </div>
                 </button>
 
-                {gym.joinFee > 0 && (
+                {plan === 'monthly' && showJoinFee > 0 && (
                   <div className="p-4 rounded-xl bg-amber-light border border-amber/20">
-                    <p className="text-sm font-medium text-amber">One-time joining fee: ${gym.joinFee}</p>
+                    <p className="text-sm font-medium text-amber">One-time joining fee: ${showJoinFee}</p>
                     <p className="text-xs text-text2 mt-0.5">Charged with your first payment</p>
                   </div>
                 )}
@@ -126,7 +126,7 @@ export default function BookPage() {
 
                 <div className="flex gap-3 mt-4">
                   <button onClick={() => setStep(2)} className="flex-1 border border-border text-text2 py-3.5 rounded-xl font-semibold text-[15px] hover:border-teal transition-colors">Back</button>
-                  <button onClick={() => setStep(4)} className="flex-1 bg-teal text-white py-3.5 rounded-xl font-semibold text-[15px] hover:bg-teal-dark transition-colors">Pay ${selectedPrice}{plan === 'annual' ? ` x 12 = $${selectedPrice * 12}` : ''}{gym.joinFee > 0 ? ` + $${gym.joinFee} fee` : ''}</button>
+                  <button onClick={() => setStep(4)} className="flex-1 bg-teal text-white py-3.5 rounded-xl font-semibold text-[15px] hover:bg-teal-dark transition-colors">Pay {plan === 'annual' ? '$70' : `$${monthlyPrice}`}{showJoinFee > 0 ? ` + $${showJoinFee} fee` : ''}</button>
                 </div>
               </div>
             )}
@@ -143,8 +143,8 @@ export default function BookPage() {
                     <div className="flex justify-between text-sm"><span className="text-text2">Gym</span><span className="font-medium">{gym.name}</span></div>
                     <div className="flex justify-between text-sm"><span className="text-text2">Plan</span><span className="font-medium capitalize">{plan}</span></div>
                     <div className="flex justify-between text-sm"><span className="text-text2">Monthly</span><span className="font-medium text-teal">${selectedPrice}/mo</span></div>
-                    {gym.joinFee > 0 && <div className="flex justify-between text-sm"><span className="text-text2">Join fee</span><span className="font-medium">${gym.joinFee}</span></div>}
-                    <div className="flex justify-between text-sm pt-2 border-t border-border"><span className="text-text2">First charge</span><span className="font-bold">${selectedPrice + gym.joinFee}</span></div>
+                    {showJoinFee > 0 && <div className="flex justify-between text-sm"><span className="text-text2">Join fee</span><span className="font-medium">${showJoinFee}</span></div>}
+                    <div className="flex justify-between text-sm pt-2 border-t border-border"><span className="text-text2">First charge</span><span className="font-bold">${selectedPrice + showJoinFee}</span></div>
                   </div>
                 </div>
                 <div className="p-4 rounded-xl bg-teal-light max-w-sm mx-auto mb-6">
@@ -171,8 +171,8 @@ export default function BookPage() {
                 </div>
                 <div className="border-t border-border pt-4 space-y-2">
                   <div className="flex justify-between text-sm"><span className="text-text2">{plan === 'annual' ? 'Annual' : 'Monthly'} plan</span><span className="font-semibold">${selectedPrice}/mo</span></div>
-                  {gym.joinFee > 0 && <div className="flex justify-between text-sm"><span className="text-text2">Joining fee</span><span className="font-semibold">${gym.joinFee}</span></div>}
-                  <div className="flex justify-between text-sm pt-2 border-t border-border"><span className="font-medium">Due today</span><span className="font-bold text-teal">${selectedPrice + gym.joinFee}</span></div>
+                  {showJoinFee > 0 && <div className="flex justify-between text-sm"><span className="text-text2">Joining fee</span><span className="font-semibold">${showJoinFee}</span></div>}
+                  <div className="flex justify-between text-sm pt-2 border-t border-border"><span className="font-medium">Due today</span><span className="font-bold text-teal">${selectedPrice + showJoinFee}</span></div>
                 </div>
                 <div className="mt-4 space-y-2">
                   {['Cancel anytime','Full gym access from day one','Digital membership card'].map(b => (
