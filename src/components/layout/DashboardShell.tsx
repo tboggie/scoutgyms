@@ -58,7 +58,7 @@ export default function DashboardShell({ children, variant = 'consumer' }: { chi
  </Link>
  ))}
  </div>
- <main className="flex-1 lg:ml-60 p-6 pb-24 lg:pb-6">{children}</main>
+ <main className="flex-1 lg:ml-60 p-4 sm:p-6 pb-28 lg:pb-6">{children}</main>
  </div>
  </>
  );

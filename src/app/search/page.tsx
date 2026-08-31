@@ -13,10 +13,13 @@ export default function SearchPage() {
   const [compareList, setCompareList] = useState<string[]>([]);
   const [filters, setFilters] = useState<string[]>([]);
   const [searchText, setSearchText] = useState('');
+  const [page, setPage] = useState(1);
+  const perPage = 20;
 
-  const toggleFilter = (f: string) => setFilters(prev => prev.includes(f) ? prev.filter(x=>x!==f) : [...prev, f]);
+  const toggleFilter = (f: string) => { setFilters(prev => prev.includes(f) ? prev.filter(x=>x!==f) : [...prev, f]); setPage(1); };
   const toggleCompare = (id: string) => setCompareList(prev => prev.includes(id) ? prev.filter(x => x !== id) : prev.length < 3 ? [...prev, id] : prev);
 
+  const resetPage = () => setPage(1);
   let results = MOCK_GYMS;
 
   // Filter by state
@@ -75,7 +78,7 @@ export default function SearchPage() {
         </div>
 
         <div className="flex flex-col gap-4">
-          {results.map(gym=>(
+          {results.slice((page-1)*perPage, page*perPage).map(gym=>(
             <div key={gym.id} className="bg-card rounded-2xl border border-border p-5 hover:shadow-lg transition-all">
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 <img src={`/gym-photos/u${String(parseInt(gym.id)).padStart(3,'0')}.jpg`} alt={gym.name} className="w-full md:w-28 h-20 rounded-xl object-cover flex-shrink-0"/>
@@ -108,6 +111,13 @@ export default function SearchPage() {
               </div>
             </div>
           ))}
+          {results.length > perPage && (
+            <div className="flex items-center justify-center gap-2 mt-6">
+              <button onClick={() => setPage(p => Math.max(1, p-1))} disabled={page === 1} className="px-4 py-2 rounded-lg text-sm font-semibold border border-border text-text2 hover:border-teal disabled:opacity-30 disabled:cursor-not-allowed transition-colors">Previous</button>
+              <span className="text-sm text-text3 px-3">Page {page} of {Math.ceil(results.length / perPage)}</span>
+              <button onClick={() => setPage(p => Math.min(Math.ceil(results.length / perPage), p+1))} disabled={page >= Math.ceil(results.length / perPage)} className="px-4 py-2 rounded-lg text-sm font-semibold border border-border text-text2 hover:border-teal disabled:opacity-30 disabled:cursor-not-allowed transition-colors">Next</button>
+            </div>
+          )}
           {results.length === 0 && (
             <div className="text-center py-16">
               <p className="text-xl font-semibold mb-2">No gyms found</p>
