@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { MOCK_GYMS, US_STATES } from '@/lib/mock-data';
 import { Search, MapPin, Star, Clock, Dumbbell, Waves } from 'lucide-react';
 
-const thumbs = ['/gym-photos/boxing.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg','/gym-photos/fitlife-1.jpg','/gym-photos/fitlife-2.jpg','/gym-photos/fitlife-3.jpg','/gym-photos/fitlife-4.jpg','/gym-photos/g1.jpg','/gym-photos/g10.jpg','/gym-photos/g11.jpg','/gym-photos/g12.jpg','/gym-photos/g13.jpg','/gym-photos/g14.jpg','/gym-photos/g15.jpg','/gym-photos/g16.jpg','/gym-photos/g17.jpg','/gym-photos/g18.jpg','/gym-photos/g19.jpg','/gym-photos/g2.jpg','/gym-photos/g20.jpg','/gym-photos/g21.jpg','/gym-photos/g22.jpg','/gym-photos/g23.jpg','/gym-photos/g24.jpg','/gym-photos/g25.jpg','/gym-photos/g26.jpg','/gym-photos/g27.jpg','/gym-photos/g28.jpg','/gym-photos/g29.jpg','/gym-photos/g3.jpg','/gym-photos/g30.jpg','/gym-photos/g4.jpg','/gym-photos/g5.jpg','/gym-photos/g6.jpg','/gym-photos/g7.jpg','/gym-photos/g8.jpg','/gym-photos/g9.jpg','/gym-photos/gym-10.jpg','/gym-photos/gym-11.jpg','/gym-photos/gym-12.jpg','/gym-photos/gym-13.jpg','/gym-photos/gym-14.jpg','/gym-photos/gym-7.jpg','/gym-photos/gym-8.jpg','/gym-photos/gym-9.jpg','/gym-photos/interior.jpg','/gym-photos/machines.jpg','/gym-photos/peak-1.jpg','/gym-photos/peak-2.jpg','/gym-photos/peak-3.jpg','/gym-photos/peak-4.jpg','/gym-photos/pool.jpg','/gym-photos/training.jpg','/gym-photos/weights.jpg'];
 
 export default function SearchPage() {
   const [stateFilter, setStateFilter] = useState('');
@@ -79,7 +78,7 @@ export default function SearchPage() {
           {results.map(gym=>(
             <div key={gym.id} className="bg-card rounded-2xl border border-border p-5 hover:shadow-lg transition-all">
               <div className="flex flex-col md:flex-row md:items-center gap-4">
-                <img src={thumbs[(parseInt(gym.id) * 13) % thumbs.length]} alt={gym.name} className="w-full md:w-28 h-20 rounded-xl object-cover flex-shrink-0"/>
+                <img src={`/gym-photos/u${String(parseInt(gym.id)).padStart(3,'0')}.jpg`} alt={gym.name} className="w-full md:w-28 h-20 rounded-xl object-cover flex-shrink-0"/>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">

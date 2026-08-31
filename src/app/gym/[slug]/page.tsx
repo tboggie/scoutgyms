@@ -6,10 +6,12 @@ import { useParams } from 'next/navigation';
 import { MOCK_GYMS, MOCK_REVIEWS } from '@/lib/mock-data';
 import { MapPin, Star, Clock, Waves, Dumbbell, Car, Share2, Heart, ChevronRight } from 'lucide-react';
 
-const allPhotos = ['/gym-photos/boxing.jpg','/gym-photos/cardio.jpg','/gym-photos/class.jpg','/gym-photos/fitlife-1.jpg','/gym-photos/fitlife-2.jpg','/gym-photos/fitlife-3.jpg','/gym-photos/fitlife-4.jpg','/gym-photos/g1.jpg','/gym-photos/g10.jpg','/gym-photos/g11.jpg','/gym-photos/g12.jpg','/gym-photos/g13.jpg','/gym-photos/g14.jpg','/gym-photos/g15.jpg','/gym-photos/g16.jpg','/gym-photos/g17.jpg','/gym-photos/g18.jpg','/gym-photos/g19.jpg','/gym-photos/g2.jpg','/gym-photos/g20.jpg','/gym-photos/g21.jpg','/gym-photos/g22.jpg','/gym-photos/g23.jpg','/gym-photos/g24.jpg','/gym-photos/g25.jpg','/gym-photos/g26.jpg','/gym-photos/g27.jpg','/gym-photos/g28.jpg','/gym-photos/g29.jpg','/gym-photos/g3.jpg','/gym-photos/g30.jpg','/gym-photos/g4.jpg','/gym-photos/g5.jpg','/gym-photos/g6.jpg','/gym-photos/g7.jpg','/gym-photos/g8.jpg','/gym-photos/g9.jpg','/gym-photos/gym-10.jpg','/gym-photos/gym-11.jpg','/gym-photos/gym-12.jpg','/gym-photos/gym-13.jpg','/gym-photos/gym-14.jpg','/gym-photos/gym-7.jpg','/gym-photos/gym-8.jpg','/gym-photos/gym-9.jpg','/gym-photos/interior.jpg','/gym-photos/machines.jpg','/gym-photos/peak-1.jpg','/gym-photos/peak-2.jpg','/gym-photos/peak-3.jpg','/gym-photos/peak-4.jpg','/gym-photos/pool.jpg','/gym-photos/training.jpg','/gym-photos/weights.jpg'];
-
 function getGymPhotos(gymId: number): string[] {
-  return [0,1,2,3].map(i => allPhotos[(gymId * 13 + i * 7) % allPhotos.length]);
+  const main = `/gym-photos/u${String(gymId).padStart(3,'0')}.jpg`;
+  const extra1 = `/gym-photos/u${String(((gymId + 49) % 200) + 1).padStart(3,'0')}.jpg`;
+  const extra2 = `/gym-photos/u${String(((gymId + 99) % 200) + 1).padStart(3,'0')}.jpg`;
+  const extra3 = `/gym-photos/u${String(((gymId + 149) % 200) + 1).padStart(3,'0')}.jpg`;
+  return [main, extra1, extra2, extra3];
 }
 
 export default function GymProfile() {
