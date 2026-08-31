@@ -52,9 +52,9 @@ body { background: var(--color-bg); color: var(--color-text); font-family: var(-
   --color-blue-light: rgba(96,165,250,.12);
   --color-coral: #fb923c;
   --color-coral-light: rgba(251,146,60,.12);
-  --color-text: #7dd3fc;
-  --color-text2: #67b8db;
-  --color-text3: #4a9fc2;
+  --color-text: #6a9fea;
+  --color-text2: #5a8ad4;
+  --color-text3: #4a75be;
   --color-border: #1a1a1a;
   --color-border2: #252525;
   --color-card: #1c1e2a;
